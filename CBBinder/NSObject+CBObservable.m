@@ -1,12 +1,12 @@
 //
-//  NSObject.m
+//  NSObject+CBObservable.m
 //  CBBinder
 //
 //  Created by Carmen Udrescu on 13/06/2018.
 //  Copyright © 2018 CB. All rights reserved.
 //
 
-#import "NSObject.h"
+#import "NSObject+CBObservable.h"
 
 
 // Proxy observer which forwards the property event to all registered observer targets.
@@ -76,6 +76,11 @@ static void *CBObservableProxyKey;
     }
     
     return self;
+}
+
+// Describe the object.
+- (NSString *)description {
+    return [NSString stringWithFormat:@"CBKeyPathValueChangeEvent [object = %@, keyPath = %@, value = %@, oldValue = %@]", _object, _keyPath, _value, _oldValue];
 }
 
 @end

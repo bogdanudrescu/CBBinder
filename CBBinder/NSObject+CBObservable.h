@@ -1,5 +1,5 @@
 //
-//  NSObject.h
+//  NSObject+CBObservable.h
 //  CBBinder
 //
 //  Created by Carmen Udrescu on 13/06/2018.

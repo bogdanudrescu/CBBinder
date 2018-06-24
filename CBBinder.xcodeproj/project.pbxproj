@@ -10,8 +10,9 @@
 		1A7A903820D0D548008154D6 /* CBBinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7A902E20D0D547008154D6 /* CBBinder.framework */; };
 		1A7A903D20D0D548008154D6 /* CBBinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A903C20D0D548008154D6 /* CBBinderTests.m */; };
 		1A7A903F20D0D548008154D6 /* CBBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7A903120D0D547008154D6 /* CBBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A7A904A20D0D58C008154D6 /* NSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7A904820D0D58C008154D6 /* NSObject.h */; };
-		1A7A904B20D0D58C008154D6 /* NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A904920D0D58C008154D6 /* NSObject.m */; };
+		1A7A904A20D0D58C008154D6 /* NSObject+CBObservable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7A904820D0D58C008154D6 /* NSObject+CBObservable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A7A904B20D0D58C008154D6 /* NSObject+CBObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A904920D0D58C008154D6 /* NSObject+CBObservable.m */; };
+		1AB80AA920DF981700092053 /* CBObservableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB80AA820DF981600092053 /* CBObservableTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +32,9 @@
 		1A7A903720D0D548008154D6 /* CBBinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBBinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A903C20D0D548008154D6 /* CBBinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBBinderTests.m; sourceTree = "<group>"; };
 		1A7A903E20D0D548008154D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A7A904820D0D58C008154D6 /* NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObject.h; sourceTree = "<group>"; };
-		1A7A904920D0D58C008154D6 /* NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObject.m; sourceTree = "<group>"; };
+		1A7A904820D0D58C008154D6 /* NSObject+CBObservable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CBObservable.h"; sourceTree = "<group>"; };
+		1A7A904920D0D58C008154D6 /* NSObject+CBObservable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CBObservable.m"; sourceTree = "<group>"; };
+		1AB80AA820DF981600092053 /* CBObservableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBObservableTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 			children = (
 				1A7A903120D0D547008154D6 /* CBBinder.h */,
 				1A7A903220D0D547008154D6 /* Info.plist */,
-				1A7A904820D0D58C008154D6 /* NSObject.h */,
-				1A7A904920D0D58C008154D6 /* NSObject.m */,
+				1A7A904820D0D58C008154D6 /* NSObject+CBObservable.h */,
+				1A7A904920D0D58C008154D6 /* NSObject+CBObservable.m */,
 			);
 			path = CBBinder;
 			sourceTree = "<group>";
@@ -86,8 +88,9 @@
 		1A7A903B20D0D548008154D6 /* CBBinderTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A7A903C20D0D548008154D6 /* CBBinderTests.m */,
 				1A7A903E20D0D548008154D6 /* Info.plist */,
+				1A7A903C20D0D548008154D6 /* CBBinderTests.m */,
+				1AB80AA820DF981600092053 /* CBObservableTests.m */,
 			);
 			path = CBBinderTests;
 			sourceTree = "<group>";
@@ -99,7 +102,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A7A904A20D0D58C008154D6 /* NSObject.h in Headers */,
+				1A7A904A20D0D58C008154D6 /* NSObject+CBObservable.h in Headers */,
 				1A7A903F20D0D548008154D6 /* CBBinder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A7A904B20D0D58C008154D6 /* NSObject.m in Sources */,
+				1A7A904B20D0D58C008154D6 /* NSObject+CBObservable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7A903D20D0D548008154D6 /* CBBinderTests.m in Sources */,
+				1AB80AA920DF981700092053 /* CBObservableTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +404,7 @@
 				1A7A904420D0D548008154D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A7A904520D0D548008154D6 /* Build configuration list for PBXNativeTarget "CBBinderTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +413,7 @@
 				1A7A904720D0D548008154D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
