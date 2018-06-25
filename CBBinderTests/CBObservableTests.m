@@ -2,7 +2,7 @@
 //  CBObservableTests.m
 //  CBBinder
 //
-//  Created by Carmen Udrescu on 24/06/2018.
+//  Created by Bogdan Udrescu on 24/06/2018.
 //  Copyright © 2018 CB. All rights reserved.
 //
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -152,6 +152,7 @@
 		1A7A902520D0D547008154D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CB;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CB;
 				TargetAttributes = {
@@ -168,7 +169,7 @@
 				};
 			};
 			buildConfigurationList = 1A7A902820D0D547008154D6 /* Build configuration list for PBXProject "CBBinder" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -339,7 +340,11 @@
 				INFOPLIST_FILE = CBBinder/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cb.CBBinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -358,7 +363,11 @@
 				INFOPLIST_FILE = CBBinder/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cb.CBBinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -370,7 +379,11 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = SBGRYNA36R;
 				INFOPLIST_FILE = CBBinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cb.CBBinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -381,7 +394,11 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = SBGRYNA36R;
 				INFOPLIST_FILE = CBBinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cb.CBBinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
