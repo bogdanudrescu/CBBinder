@@ -17,7 +17,7 @@
  Adds an observer for the specified keyPath.
 
  @param target The observer target instance to be notified about the property change.
- @param action The action to be invoked when the property at keyPath changes. The selector must receive only one argument of type CBKeyPathValueChangeEvent.
+ @param action The action to be invoked when the property at keyPath changes. The selector may receive one argument of type CBKeyPathValueChangeEvent.
  @param keyPath KeyPath of the property to observe.
  */
 - (void)addObserverTarget:(NSObject *)target action:(SEL)action forKeyPath:(NSString *)keyPath;

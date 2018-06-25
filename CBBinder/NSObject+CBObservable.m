@@ -71,11 +71,21 @@ static void *CBObservableProxyKey;
     if (self = [super init]) {
         _object = object;
         _keyPath = keyPath;
-        _value = value;
-        _oldValue = oldValue;
+        _value = [self ensureNilWithValue:value];
+        _oldValue = [self ensureNilWithValue:oldValue];
     }
     
     return self;
+}
+
+// Check if NSNull and provide nil instead.
+- (id)ensureNilWithValue:(id)value {
+    if ([value isKindOfClass:[NSNull class]]) {
+        return nil;
+
+    } else {
+        return value;
+    }
 }
 
 // Describe the object.
@@ -162,7 +172,7 @@ static void *CBObservableProxyKey;
 
     [array removeObjectsInArray:removed];
 
-    if (array.count == 0) {
+    if (array.count == 0 && removed.count > 0) {
         // Remove the real observer only once.
         [_observable removeObserver:self forKeyPath:keyPath];
 
@@ -174,14 +184,22 @@ static void *CBObservableProxyKey;
 
 // Proxy observe value implementation.
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    [_lock lock];
+    
+    id value = change[NSKeyValueChangeNewKey];
+    id oldValue = change[NSKeyValueChangeOldKey];
 
-    NSMutableArray<CBTargetAction *> *array = _keyPath2TargetActions[keyPath];
+    if ([value isEqual:oldValue]) {
+        return;
+    }
 
     CBKeyPathValueChangeEvent *event = [[CBKeyPathValueChangeEvent alloc] initWithObject:object
                                                                                  keyPath:keyPath
-                                                                                   value:change[NSKeyValueChangeNewKey]
-                                                                                oldValue:change[NSKeyValueChangeOldKey]];
+                                                                                   value:value
+                                                                                oldValue:oldValue];
+
+    [_lock lock];
+
+    NSMutableArray<CBTargetAction *> *array = _keyPath2TargetActions[keyPath];
 
     for (CBTargetAction *targetAction in array) {
         if ([targetAction.target respondsToSelector:targetAction.action]) {
