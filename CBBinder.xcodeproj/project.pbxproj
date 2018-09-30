@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A7769D42160E8FC006F1B1E /* CBBindService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7769D22160E8FC006F1B1E /* CBBindService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A7769D52160E8FC006F1B1E /* CBBindService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769D32160E8FC006F1B1E /* CBBindService.m */; };
+		1A7769D62160E8FC006F1B1E /* CBBindService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769D32160E8FC006F1B1E /* CBBindService.m */; };
+		1A7769D9216114E6006F1B1E /* CBObjectProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7769D7216114E6006F1B1E /* CBObjectProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A7769DA216114E6006F1B1E /* CBObjectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769D8216114E6006F1B1E /* CBObjectProperty.m */; };
+		1A7769DB216114E6006F1B1E /* CBObjectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769D8216114E6006F1B1E /* CBObjectProperty.m */; };
+		1A7769DE21611723006F1B1E /* CBObjectProperty+CBObservable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7769DC21611723006F1B1E /* CBObjectProperty+CBObservable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A7769DF21611723006F1B1E /* CBObjectProperty+CBObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769DD21611723006F1B1E /* CBObjectProperty+CBObservable.m */; };
+		1A7769E021611723006F1B1E /* CBObjectProperty+CBObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769DD21611723006F1B1E /* CBObjectProperty+CBObservable.m */; };
+		1A7769E321612D3B006F1B1E /* CBBindTestObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7769E121612D3B006F1B1E /* CBBindTestObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A7769E421612D3B006F1B1E /* CBBindTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769E221612D3B006F1B1E /* CBBindTestObject.m */; };
+		1A7769E521612D3B006F1B1E /* CBBindTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7769E221612D3B006F1B1E /* CBBindTestObject.m */; };
 		1A7A903820D0D548008154D6 /* CBBinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7A902E20D0D547008154D6 /* CBBinder.framework */; };
 		1A7A903D20D0D548008154D6 /* CBBinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A903C20D0D548008154D6 /* CBBinderTests.m */; };
 		1A7A903F20D0D548008154D6 /* CBBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7A903120D0D547008154D6 /* CBBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7769D22160E8FC006F1B1E /* CBBindService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBindService.h; sourceTree = "<group>"; };
+		1A7769D32160E8FC006F1B1E /* CBBindService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBBindService.m; sourceTree = "<group>"; };
+		1A7769D7216114E6006F1B1E /* CBObjectProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBObjectProperty.h; sourceTree = "<group>"; };
+		1A7769D8216114E6006F1B1E /* CBObjectProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBObjectProperty.m; sourceTree = "<group>"; };
+		1A7769DC21611723006F1B1E /* CBObjectProperty+CBObservable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBObjectProperty+CBObservable.h"; sourceTree = "<group>"; };
+		1A7769DD21611723006F1B1E /* CBObjectProperty+CBObservable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CBObjectProperty+CBObservable.m"; sourceTree = "<group>"; };
+		1A7769E121612D3B006F1B1E /* CBBindTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBindTestObject.h; sourceTree = "<group>"; };
+		1A7769E221612D3B006F1B1E /* CBBindTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBBindTestObject.m; sourceTree = "<group>"; };
 		1A7A902E20D0D547008154D6 /* CBBinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBBinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A903120D0D547008154D6 /* CBBinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBinder.h; sourceTree = "<group>"; };
 		1A7A903220D0D547008154D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +101,12 @@
 				1A7A903220D0D547008154D6 /* Info.plist */,
 				1A7A904820D0D58C008154D6 /* NSObject+CBObservable.h */,
 				1A7A904920D0D58C008154D6 /* NSObject+CBObservable.m */,
+				1A7769D7216114E6006F1B1E /* CBObjectProperty.h */,
+				1A7769D8216114E6006F1B1E /* CBObjectProperty.m */,
+				1A7769DC21611723006F1B1E /* CBObjectProperty+CBObservable.h */,
+				1A7769DD21611723006F1B1E /* CBObjectProperty+CBObservable.m */,
+				1A7769D22160E8FC006F1B1E /* CBBindService.h */,
+				1A7769D32160E8FC006F1B1E /* CBBindService.m */,
 			);
 			path = CBBinder;
 			sourceTree = "<group>";
@@ -89,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				1A7A903E20D0D548008154D6 /* Info.plist */,
+				1A7769E121612D3B006F1B1E /* CBBindTestObject.h */,
+				1A7769E221612D3B006F1B1E /* CBBindTestObject.m */,
 				1A7A903C20D0D548008154D6 /* CBBinderTests.m */,
 				1AB80AA820DF981600092053 /* CBObservableTests.m */,
 			);
@@ -102,7 +130,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7769DE21611723006F1B1E /* CBObjectProperty+CBObservable.h in Headers */,
 				1A7A904A20D0D58C008154D6 /* NSObject+CBObservable.h in Headers */,
+				1A7769D9216114E6006F1B1E /* CBObjectProperty.h in Headers */,
+				1A7769D42160E8FC006F1B1E /* CBBindService.h in Headers */,
+				1A7769E321612D3B006F1B1E /* CBBindTestObject.h in Headers */,
 				1A7A903F20D0D548008154D6 /* CBBinder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7769E421612D3B006F1B1E /* CBBindTestObject.m in Sources */,
+				1A7769DF21611723006F1B1E /* CBObjectProperty+CBObservable.m in Sources */,
+				1A7769DA216114E6006F1B1E /* CBObjectProperty.m in Sources */,
 				1A7A904B20D0D58C008154D6 /* NSObject+CBObservable.m in Sources */,
+				1A7769D52160E8FC006F1B1E /* CBBindService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7769E521612D3B006F1B1E /* CBBindTestObject.m in Sources */,
+				1A7769E021611723006F1B1E /* CBObjectProperty+CBObservable.m in Sources */,
 				1A7A903D20D0D548008154D6 /* CBBinderTests.m in Sources */,
 				1AB80AA920DF981700092053 /* CBObservableTests.m in Sources */,
+				1A7769DB216114E6006F1B1E /* CBObjectProperty.m in Sources */,
+				1A7769D62160E8FC006F1B1E /* CBBindService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

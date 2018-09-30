@@ -18,3 +18,6 @@ FOUNDATION_EXPORT const unsigned char CBBinderVersionString[];
 
 
 #import <CBBinder/NSObject+CBObservable.h>
+#import <CBBinder/CBObjectProperty.h>
+#import <CBBinder/CBObjectProperty+CBObservable.h>
+#import <CBBinder/CBBindService.h>
