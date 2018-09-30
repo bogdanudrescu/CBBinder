@@ -9,22 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "CBBinder.h"
-
-
-// A property wrapper test object.
-@interface CBObject : NSObject
-
-// Just a string value.
-@property (strong) NSString *stringValue;
-
-// Just an integer value.
-@property (readwrite) NSInteger integerValue;
-
-@end
-
-@implementation CBObject
-
-@end
+#import "CBBindTestObject.h"
 
 
 // Test CBObservable functionality.
@@ -34,7 +19,7 @@
 
 @implementation CBObservableTests {
 
-    CBObject *object;
+    CBBindTestObject *object;
 
     XCTestExpectation *stringValueExpectation;
 
@@ -49,7 +34,11 @@
 - (void)setUp {
     [super setUp];
 
-    object = [[CBObject alloc] init];
+    object = [[CBBindTestObject alloc] init];
+}
+
+- (void)tearDown {
+    object = nil;
 }
 
 - (void)testObserverTarget {
@@ -84,13 +73,12 @@
     [object removeObserverTarget:self forKeyPath:@"stringValue"];
     [object removeObserverTarget:self forKeyPath:@"integerValue"];
 
-    // Is still observed the expectations should fail since assertForOverFulfill is set and expectedFulfillmentCount is 1.
+    // If still observed the expectations should fail since assertForOverFulfill is set and expectedFulfillmentCount is 1.
     object.stringValue = @"ObservedValue2";
     object.integerValue = 7;
 
-    // Ensure this won't crach the test.
+    // Ensure this won't crash the test.
     [object removeObserverTarget:self forKeyPath:@"stringValue"];
-
 }
 
 - (void)stringValueChanged:(CBKeyPathValueChangeEvent *)event {

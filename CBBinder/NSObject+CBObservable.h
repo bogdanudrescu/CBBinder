@@ -24,7 +24,7 @@
 
 /**
  Removes an observer for the specified keyPath.
- 
+
  @param target The observer target instance to remove.
  @param keyPath KeyPath of the property.
  */
@@ -32,20 +32,18 @@
 
 @end
 
+
+@class CBObjectProperty;
+
 /**
  The change event.
  */
 @interface CBKeyPathValueChangeEvent : NSObject
 
 /**
- The object where the change occurs.
+ The object property where the change occurs.
  */
-@property (readonly) id object;
-
-/**
- The key path.
- */
-@property (readonly) NSString *keyPath;
+@property (readonly) CBObjectProperty *property;
 
 /**
  New value of the property.

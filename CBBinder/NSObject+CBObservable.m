@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+CBObservable.h"
+#import "CBObjectProperty.h"
 
 
 // Proxy observer which forwards the property event to all registered observer targets.
@@ -45,16 +46,15 @@ static void *CBObservableProxyKey;
 // Gets the associated observer proxy.
 - (CBObserverProxy *)observerProxy {
 
-    __block CBObserverProxy *proxy = objc_getAssociatedObject(self, &CBObservableProxyKey);
+    CBObserverProxy *proxy;
 
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        proxy = [[CBObserverProxy alloc] initWithObservable:self];
-        objc_setAssociatedObject(self, &CBObservableProxyKey, proxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    });
-
-    if (proxy == nil) {
+    @synchronized(self) {
         proxy = objc_getAssociatedObject(self, &CBObservableProxyKey);
+
+        if (proxy == nil) {
+            proxy = [[CBObserverProxy alloc] initWithObservable:self];
+            objc_setAssociatedObject(self, &CBObservableProxyKey, proxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
     }
 
     return proxy;
@@ -69,8 +69,7 @@ static void *CBObservableProxyKey;
 // Init the event.
 - (instancetype)initWithObject:(id)object keyPath:(NSString *)keyPath value:(id)value oldValue:(id)oldValue  {
     if (self = [super init]) {
-        _object = object;
-        _keyPath = keyPath;
+        _property = [CBObjectProperty withObject:object keyPath:keyPath];
         _value = [self ensureNilWithValue:value];
         _oldValue = [self ensureNilWithValue:oldValue];
     }
@@ -90,7 +89,7 @@ static void *CBObservableProxyKey;
 
 // Describe the object.
 - (NSString *)description {
-    return [NSString stringWithFormat:@"CBKeyPathValueChangeEvent [object = %@, keyPath = %@, value = %@, oldValue = %@]", _object, _keyPath, _value, _oldValue];
+    return [NSString stringWithFormat:@"<CBKeyPathValueChangeEvent property = %@, value = %@, oldValue = %@>", _property, _value, _oldValue];
 }
 
 @end
@@ -100,7 +99,7 @@ static void *CBObservableProxyKey;
 @interface CBTargetAction : NSObject
 
 // The observer.
-@property (readonly) NSObject *target;
+@property (readonly, weak) NSObject *target;
 
 // The action.
 @property (readonly) SEL action;
